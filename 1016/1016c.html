@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 請使用輸入視窗(prompt)來輸入任意值，並且檢查是不是偶數
+        var num = window.prompt('請輸入任意數');
+
+        // typeof(值)=> 檢測資料類型
+        // Number(值)=> 字串轉數值(保留小數點)
+        // parseInt(值)=> 字串轉數值(取整數，小數點會刪除)
+
+        // console.log(Number(num));
+        // console.log(parseInt(num));
+
+        if (isNaN(Number(num))){
+            console.log('非數值，無法判定奇偶數');
+        }else{
+            if (num % 2 === 0) {
+            console.log(num + '=>是偶數');
+            } else {
+            console.log(num + '=>是奇數');
+            }
+        }
+
+
+
+        // !== 不等於
+        // if (Number(num) !== NaN) {
+        //     if (num % 2 === 0) {
+        //     console.log(num + '=>是偶數');
+        //     } else {
+        //     console.log(num + '=>是奇數');
+        //     }
+        // }else{
+        //     console.log('非數值，無法判定');
+        // }
+
+    
+
+    </script>
+
+</body>
+
+</html>

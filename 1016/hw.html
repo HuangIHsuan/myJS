@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+    <script>
+        // 1-100的奇數和
+        var tot_odd = 0;
+
+        for (var odd = 1; odd <= 100; odd = odd + 2) {
+            document.write(odd);
+            if (odd < 99){
+                document.write('+');
+            }
+            tot_odd = tot_odd + Number(odd);
+        }
+        
+        document.write('='+tot_odd);
+        
+        document.write('<hr>');
+
+        // 100-1的偶數和
+        var tot_even = 0;
+
+        for (var even = 100; even > 0; even = even - 2) {
+            document.write(even);
+            if (even > 2){
+                document.write('+');
+            }
+            tot_even = tot_even + Number(even);
+        }
+        
+        document.write('='+tot_even);
+
+        document.write('<hr>');
+
+        // 輸入任意值，呼叫函數去執行n次(5個5, 3個3 etc.)
+
+    </script>
+</body>
+
+</html>

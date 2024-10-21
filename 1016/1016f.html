@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 不斷彈出輸入視窗，直到「取消」結束
+
+        // 布林 boolean
+        // true(真-成立)
+        // false(假-不成立)
+        var pass = 0;
+        var fail = 0;
+        var tot = 0;
+        var avg = 0;
+
+        while (true) {
+            var score = window.prompt('請輸入任意數');
+
+            // 按了取消
+            if (score == null) {
+                break;  // 脫離迴圈到迴圈結尾的下一行
+            }
+
+            // 是否有內容
+            // 去除空白後是否有內容
+            // trim() => 去除資料前後的空白(字與字之間的空白不會去除)
+            if(score.trim() == ''){
+                alert('不能沒有內容，請重新輸入');
+                continue; // 忽略之後的程式碼，回到迴圈開始的地方
+            }
+
+            //  是否為數字
+            if (isNaN(Number(score))) {
+                alert('err!非數字內容，請重新輸入');
+                continue;
+            }
+
+            // 將輸入的分數轉換為數值
+            score = Number(score);
+
+            // 及格/不及格人數
+            if (score < 60){
+                fail++; // 不及格人數累計
+            } else{
+                pass++; // 及格人數累計
+            }
+
+            // 總分加總
+            tot = tot + score;
+  
+        }
+
+        // 總平均
+        avg = (tot/(fail+pass).toFixed(2));
+
+        console.log('不及格人數: '+fail+'人');
+        console.log('及格人數: '+pass+'人');
+        console.log('分數加總: '+tot+'分');
+        console.log('分數平均: '+avg+'分');
+
+        // 訊息視窗alert()
+        // window.alert(`輸入結束:共輸入了${i}次`);
+        
+        // 輸入
+        // 100
+        // 50
+        // 20
+        // 取消
+        // ---------------
+        // 輸出
+        // 及格人數: ?人
+        // 不及格人數: ?人
+        // 總分: ?分
+        // 總平均: ?分(小數2位)
+
+    </script>
+</body>
+
+</html>

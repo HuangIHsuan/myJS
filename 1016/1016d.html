@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 請輸入單價、數量後，算出小計
+        // 2. 小計 >= 1000以上，運費為0; 否則運費為小計的1%
+
+        // 狀況1
+        // 單價: 500
+        // 數量: 2
+        // 小計: 1000
+        // 運費: 0
+
+        // 狀況2
+        // 單價: 500
+        // 數量: 1
+        // 小計: 500
+        // 運費: 5
+
+
+        var price = Number(prompt('請輸入單價'));
+        var qty = Number(prompt('請輸入數量'));
+        var tot = 0;
+
+        // 邏輯運算子
+        // 交集(且) &&
+        // 聯集(或) ||
+        if (isNaN(price) || isNaN(qty)) {
+            console.log('單價或數量err');
+        } else {
+            // 計算小計
+            tot = price * qty;
+            // 運費
+            var dis = 0;
+
+            if (tot < 1000) {
+                dis = tot * 0.01;
+            }
+
+            // 輸出結果
+            console.log('單價: ' + price);
+            console.log('數量: ' + qty);
+            console.log('小計: ' + tot);
+            console.log('運費: ' + dis);
+            console.log(`總計: ${tot + dis}`);
+        }
+
+        
+
+        // var price = Number(prompt('請輸入單價'));
+        // var num = Number(prompt('請輸入數量'));
+        // var total = price * num;
+
+        // console.log(price);
+        // console.log(num);
+
+        // if (isNaN(Number(total))) {
+        //     console.log('非數值，無法計算');
+        // } else {
+
+        //     if (total >= 1000) {
+        //         console.log('運費為0');
+        //     } else {
+        //         console.log('運費為' + Number(total * 0.01));
+        //     }
+        // }
+
+    </script>
+
+</body>
+
+</html>

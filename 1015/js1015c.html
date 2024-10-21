@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 算術運算子 -->
+    <!-- 
+        + 加
+        - 減
+        * 乘
+        / 二數相除，取商
+        % 二數相除，取餘數
+    -->
+
+    <script>
+        var a = 5;
+        var b = 3;
+        // prompt() 輸入視窗
+        var c = window.prompt('請輸入運算式符號(+ - * / %)');
+
+        // = （指派等號右邊的值給左邊的變數）
+        // == （不嚴謹的比較 ex. 5 == '5'成立）=> 等號左右兩邊的資料型態可以不同
+        // === （嚴謹的比較 ex. 5 === '5'不成立）=> 等號左右兩邊的資料型態必須相同
+        if (c === '+') {
+            document.write(`${a}+${b}=${a + b}<br>`);
+        } else if (c === '-') {
+            document.write(`${a}-${b}=${a - b}<br>`);
+        } else if (c === '*') {
+            document.write(`${a}*${b}=${a * b}<br>`);
+        } else if (c === '/') {
+            document.write(`${a}/${b}=${a / b}<br>`);
+        } else if (c === '%') {
+            document.write(`${a}%${b}=${a % b}<br>`);
+        } else {
+            document.write(c + '運算符號error');
+        }
+
+        // 字串字面值，必須使用反引號包起，變數使用${變數名稱或者運算式}
+        // document.write(`${a}+${b}=${a + b}<br>`);
+        // document.write(a + '+' + b + '=' + (a + b) + '<br>');
+
+        // document.write(`${a}-${b}=${a - b}<br>`);
+        // document.write(a + '-' + b + '=' + (a - b) + '<br>');
+
+        // document.write(`${a}*${b}=${a * b}<br>`);
+        // document.write(a + '*' + b + '=' + (a * b) + '<br>');
+
+        // document.write(`${a}/${b}=${a / b}<br>`);
+        // document.write(a + '/' + b + '=' + (a / b) + '<br>');
+
+        // document.write(`${a}%${b}=${a % b}<br>`);
+        // document.write(a + '%' + b + '=' + (a % b) + '<br>');
+
+    </script>
+</body>
+
+</html>
