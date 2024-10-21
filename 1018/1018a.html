@@ -7,7 +7,37 @@
 </head>
 <body>
     <script>
-        document.write("test");
+        
+        var uid = 0;
+        var upw = 0;
+
+        while (true) {
+
+            var uid = prompt('請輸入帳號'); 
+            var upw = prompt('請輸入密碼');
+
+            if ( uid == 'admin' && upw == '1234'){
+                alert('登入成功！');
+                break;
+
+            }else if ( uid != 'admin' && upw == '1234'){
+                alert('帳號err');
+                continue;
+
+            }else if ( uid == 'admin' && upw != '1234'){
+                alert('密碼err');
+                continue;
+
+            }else if ( uid != 'admin' && upw != '1234'){
+                alert('帳密err');
+                continue;
+
+            }
+        }
+
+        
+         
+
     </script>
 </body>
 </html>

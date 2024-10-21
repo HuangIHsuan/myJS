@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        while (true) {
+            var uid = prompt('請輸入帳號');
+            // 帳號按了取消
+            if (uid == null) {
+                alert('帳號已取消，即將結束');
+                break;
+
+            } else {
+                var upw = prompt('請輸入密碼');
+                // 密碼按了取消
+                if (upw == null) {
+                    alert('密碼已取消，即將結束');
+                    break;
+
+                } else {
+                    if (uid == 'admin' && upw == '1234') {
+                        alert('登入成功！');
+
+                    } else if (uid != 'admin' && upw == '1234') {
+                        alert('帳號err');
+
+                    } else if (uid == 'admin' && upw != '1234') {
+                        alert('密碼err');
+
+                    } else if (uid != 'admin' && upw != '1234') {
+                        alert('帳密err');
+
+                    }
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
