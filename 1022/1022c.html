@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1+2+3+...+10=?
+
+        var s = 0;
+        // var max = 20;
+
+        for (var a = 1; a <= 100; a++) {
+            s = s + a;
+        }
+
+        console.log(`1-${a - 1}的合計為 => ${s}`);
+
+        // 1-100中3的倍數合？
+        var t = 0;
+
+        for (var a = 1; a <= 100 / 3; a++) {
+            t = t + 3 * a
+
+        }
+        console.log(`1-100中3的倍數合=${t}`)
+
+        var s = 0;
+        for (var a = 1; a <= 100; a++) {
+            if (a % 3 === 0) {
+                s = s + a;
+            }
+        }
+        console.log(`1-100中3的倍數合=${s}`)
+
+        // var t = 0;
+
+        // for (var a = 1; a <= 100 / 7; a++) {
+        //     t = t + 7 * a
+
+        // }
+        // console.log(`1-100中7的倍數合=${t}`)
+
+        // var s = 0;
+        // for (var a = 1; a <= 100; a++) {
+        //     if (a % 7 === 0) {
+        //         s = s + a;
+        //     }
+        // }
+        // console.log(`1-100中7的倍數合=${s}`)
+
+
+        // 100-1中3的倍數合？
+        var s = 0;
+        for (var a = 100; a >= 1; a--) {
+            if (a % 3 === 0) {
+                s = s + a;
+            }
+        }
+        console.log(`100-1中3的倍數合=${s}`)
+    </script>
+</body>
+
+</html>
