@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    題目一：算出圓面積
+    <p id="p1"></p>
+    <!-- <button onclick="circle(r)">算出圓面積</button> -->
+
+    <script>
+        // 1.建立一個函式，傳參數r
+        // 輸入半徑r，算出面積=3.14*r*r
+        // 回傳面積結果在頁面上的段落1
+        // 半徑:? 圓面積:?
+        // var r = 3;
+        // var a = 0;
+        // function circle(r) {
+        //     a = (3.14 * r * r).toFixed(2);
+        //     var p1 = document.getElementById('p1');
+        //     p1.innerHTML = '半徑為' + r + '，圓面積為' + a;
+        // }
+
+        // JS裡面的PI值
+        // console.log(Math.PI)
+        // console.log(Math.pow(數值,次方數));
+
+        function circle(r) {
+            // return (Math.PI * r * r).toFixed(2);
+            return (Math.PI * Math.pow(r, 2)).toFixed(2);
+        }
+        var p1 = document.getElementById('p1');
+        var inputR = 10;
+        // p1.innerHTML = '半徑：' + inputR + ' 圓面積：' + circle(inputR);
+        p1.innerHTML = `半徑：${inputR} 圓面積：${circle(inputR)}`;
+
+    </script>
+</body>
+
+</html>
