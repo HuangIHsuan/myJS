@@ -38,24 +38,39 @@
 
         // 寫回圈彈出輸入視窗，來輸入值
         // 檢查是否跟亂數值一樣
+        var min = 1;
+        var max = 100;
+        var i = 1;
+
         while (true) {
-            var min = 1;
-            var max = 100;
             var ans = prompt('請輸入任意數');
-            if (ans == bingo) {
-                alert('猜對了！');
-                break;
-            }else if (ans < bingo){
-                alert(`${ans} => 太小了！(提示：${ans}-${max})`);
-                continue;
-            }else if (ans > bingo){
-                alert(`${ans} => 太大了！(提示：${ans}-${min})`);
-                continue;
-            }else if(isNaN(ans)){
+
+            if (isNaN(ans)) {
                 alert('請輸入數字');
                 continue;
             }
+
+            ans = Number(ans);
+
+            if (ans == bingo) {
+                console.log(`第${i}次：${bingo} => 猜對了！`);
+                break;
+            } else if (ans < bingo) {
+                min = ans; // 更新最小值
+                console.log(`第${i}次：${ans} => 太小了！(提示：${min}-${max})`);
+                i++;
+                continue;
+            } else if (ans > bingo) {
+                max = ans; // 更新最大值
+                console.log(`第${i}次：${ans} => 太大了！(提示：${min}-${max})`); 
+                i++;
+                continue;
+            }
+            
         }
+
+
+
 
 
 
