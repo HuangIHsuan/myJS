@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //交換
+        var a = 5;
+        var b = 3;
+        // a=3, b=5;
+        var tmp = a; // tmp = 5;
+        a = b;         // a = 3;
+        b = tmp;       // b = 5;
+
+        // console.log(a);
+        // console.log(b);
+
+        // 找出陣列中最大值與最小值
+        var arr1 = [5, 60, 3, '123', 90, true, 33, 1, 100];
+        console.log('處理前');
+        console.log(arr1);
+        // 去除非數值的陣列資料 => 保留數值資料給arr2
+        var arr2 = []; // 預設一個空陣列
+        arr2 = arr1.filter((data) => {
+            if (typeof data === "number") {
+                return data; // 把數值資料丟回給arr2
+            }
+        });
+        console.log('filter方法處理後');
+        console.log(arr2);
+
+        // 預設最大值與最小值
+        var max = arr2[0];  // max = 5;
+        var min = arr2[0];  // min = 5;
+
+        for (var i = 1; i < arr1.length; i++) {
+            if (arr2[i] > max) {
+                max = arr2[i];
+            } else if (arr2[i] < min) {
+                min = arr2[i];
+            }
+            // if(typeof arr[i] === 'string' || typeof arr1[i] === 'boolean'){
+            //     continue;
+            // }
+
+            // if (typeof arr1[i] === 'number') {
+            //     if (arr1[i] > max) {
+            //         max = arr1[i];
+            //     } else if (arr1[i] < min) {
+            //         min = arr1[i];
+            //     }
+            // }
+
+        }
+
+        console.log(`最大值：${max}，最小值：${min}`);
+    </script>
+</body>
+
+</html>

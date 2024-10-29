@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 顯示陣列中字串的值 => typeof
+
+        var arr1 = [1, 2, 3, 4, 5, '12ab345',100,'我是字串'];
+        // console.log(arr1);
+        // console.log(typeof arr1);
+
+        // 方法一
+        for (var i = 0; i < arr1.length; i++) {
+            if (typeof arr1[i] == 'string') {
+                console.log(arr1[i]);
+            }
+        }
+
+        // 方法二
+        for (var a of arr1) {
+            if (typeof a == 'string') {
+                console.log(a);
+            }
+        }
+
+        // 方法三
+        arr1.forEach((b)=>{
+            if (typeof b == 'string') {
+                console.log(b);
+            }
+        });
+
+        // 方法四
+        arr1.map((c)=>{
+            if (typeof c == 'string') {
+                console.log(c);
+            }
+        });
+
+    </script>
+</body>
+
+</html>
