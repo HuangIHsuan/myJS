@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 亂數產生大樂透號碼
+        // 01-49中產生6個號碼(不可重複)
+        var lott = [];
+        for (var i = 0; i < 6; i++) {
+            // 亂數
+            var no = Math.floor(Math.random() * 49) + 1;
+            if (lott.includes(no)) {
+                // 有找到 => 重複
+                i = i - 1; // i-- 消除原本已經存在的位置
+                continue;
+            } else {
+                // 沒找到 => 沒有重複
+                lott[i] = no;
+            }
+        }
+        console.log(`第一區：${lott}`);
+
+        // 1個特別號(不可重複)
+        while (true) {
+            var sno = Math.floor(Math.random() * 49) + 1;
+            if (lott.includes(sno)) {
+                // 有找到 => 重複
+                continue;
+            } else {
+                // 沒找到 => 沒有重複
+                lott.push(sno);
+                break;
+            }
+        }
+        console.log(`特：${lott[lott.length - 1]}`);
+
+
+        // do {
+        //     var sno = Math.floor(Math.random() * 49) + 1;
+        //     var find_flag = true;
+        //     if (lott.includes(sno)) {
+        //         // 有找到 => 重複
+        //         find_flag = true;
+        //     } else {
+        //         // 沒找到 => 沒有重複
+        //         lott.push(sno);
+        //         break;
+        //     }
+
+        // } while (find_flag == true);
+
+        // console.log(lott);
+
+
+        //  自己練習
+        var lottery = [];
+
+        // 求6個號碼
+        for (var i = 0; i < 6; i++) {
+            var num = Math.floor(Math.random() * 49) + 1;
+            if (lottery.includes(num)) {
+                i--;
+                continue;
+            } else {
+                lottery[i] = num;
+            }
+
+        }
+        console.log(lottery);
+        // 求特別號
+        while (true) {
+            var snum = Math.floor(Math.random() * 49) + 1;
+            if (lottery.includes(snum)) {
+                continue;
+            } else {
+                lottery.push(snum);
+                break;
+            }
+        }
+        console.log(lottery);
+
+
+
+
+    </script>
+</body>
+
+</html>

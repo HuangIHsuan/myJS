@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 輸入：
+        // 1 => 大樂透6(1-49) + 特1(1-49)
+        // 2 => 威力彩6(1-38) + 特1(1-8)
+        // 3 => 今彩5(1-39)
+
+        var min = 0; // 一般區最小值
+        var max = 0; // 一般區最大值
+        var smin = 0; // 特別區最小值
+        var smax = 0; // 特別區最大值
+        var n = 0; // 一般區號碼個數
+        var sn = 0; // 特別區號碼個數
+        var lott = [];
+
+        function getLott(min, max, n, smin, smax, sn) {
+            // 一般區號碼
+            for (var i = 0; i < n; i++) {
+                var num = Math.floor((Math.random() * max) + min);
+                if (lott.includes(num)) {
+                    i = i - 1;
+                    continue;
+                } else {
+                    lott[i] = num;
+                }
+            }
+
+            // 特別區號碼
+            while (sn) {
+                if (sn === 0) {
+                    break;
+                } else {
+                    var snum = Math.floor((Math.random() * smax) + smin);
+                    if (lott.includes(snum)) {
+                        continue;
+                    } else {
+                        lott.push(snum);
+                        break;
+                    }
+                }
+            }
+            console.log(`開獎號碼：${lott}`)
+
+        }
+
+        
+        while (true) {
+            var gameNo = prompt('1:產生大樂透號碼 2:產生威力彩號碼 3:產生今彩號碼');
+            if (gameNo == 1) {
+                getLott(1, 49, 6, 1, 49, 1);
+                alert(`大樂透開獎號碼：${lott}`);
+                break;
+            } else if (gameNo == 2) {
+                getLott(1, 38, 6, 1, 8, 1);
+                alert(`威力彩開獎號碼：${lott}`);
+                break;
+            } else if (gameNo == 3) {
+                getLott(1, 39, 5, 0, 0, 0);
+                alert(`今彩開獎號碼：${lott}`);
+                break;
+            } else {
+                alert('請輸入數字1,2,3');
+                continue;
+            }
+        }
+
+    </script>
+</body>
+
+</html>

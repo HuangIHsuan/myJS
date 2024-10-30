@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        // 大樂透號碼
+        // 01-49中產生6個號碼(不可重複)
+        var lott1 = [];
+        for (var i = 0; i < 6; i++) {
+            // 亂數
+            var no1 = Math.floor(Math.random() * 49) + 1;
+            if (lott1.includes(no1)) {
+                // 有找到 => 重複
+                i = i - 1; // i-- 消除原本已經存在的位置
+                continue;
+            } else {
+                // 沒找到 => 沒有重複
+                lott1[i] = no1;
+            }
+        }
+        console.log(`大樂透第一區：${lott1}`);
+
+        // 1個特別號(不可重複)
+        while (true) {
+            var sno1 = Math.floor(Math.random() * 49) + 1;
+            if (lott1.includes(sno1)) {
+                // 有找到 => 重複
+                continue;
+            } else {
+                // 沒找到 => 沒有重複
+                lott1.push(sno1);
+                break;
+            }
+        }
+        console.log(`特：${lott1[lott1.length - 1]}`);
+
+        // 威力彩號碼
+        // 01-38中產生6個號碼(不可重複)
+        var lott2 = [];
+        for (var i = 0; i < 6; i++) {
+            // 亂數
+            var no2 = Math.floor(Math.random() * 38) + 1;
+            if (lott2.includes(no2)) {
+                // 有找到 => 重複
+                i = i - 1; // i-- 消除原本已經存在的位置
+                continue;
+            } else {
+                // 沒找到 => 沒有重複
+                lott2[i] = no2;
+            }
+        }
+        console.log(`威力彩第一區：${lott2}`);
+
+        // 1個特別號(可重複)
+        var sno2 = Math.floor(Math.random() * 8) + 1;
+        lott2.push(sno2);
+        console.log(`特：${sno2}`);
+
+        // 今彩號碼
+        // 01-39中產生5個號碼(不可重複)
+        var lott3 = [];
+        for (var i = 0; i < 5; i++) {
+            // 亂數
+            var no3 = Math.floor(Math.random() * 39) + 1;
+            if (lott3.includes(no3)) {
+                // 有找到 => 重複
+                i = i - 1; // i-- 消除原本已經存在的位置
+                continue;
+            } else {
+                // 沒找到 => 沒有重複
+                lott3[i] = no3;
+            }
+        }
+        console.log(`今彩第一區：${lott3}`);
+        */
+
+        // 建立一個通用的函式可以產生號碼
+        // 參數預設值
+        function getLottNum(lottName, count, max, secFlag, secMax = 0) {
+            // 第一區號碼
+            var lott = [];
+            for (var i = 0; i < count; i++) {
+                // 亂數
+                var no = Math.floor(Math.random() * max) + 1;
+                if (lott.includes(no)) {
+                    // 有找到 => 重複
+                    i = i - 1; // i-- 消除原本已經存在的位置
+                    continue;
+                } else {
+                    // 沒找到 => 沒有重複
+                    lott[i] = no;
+                }
+            }
+            console.log(`${lottName}第一區：${lott}`);
+
+            // 第二區號碼
+            if (secFlag === 'Y') {
+                var sno = Math.floor(Math.random() * secMax) + 1;
+                while (true) {
+                    if (lottName == '大樂透') {
+                        if (lott.includes(sno)) {
+                            // 有找到 => 重複
+                            continue;
+                        } else {
+                            // 沒找到 => 沒有重複
+                            lott.push(sno);
+                            break;
+                        }
+                    } else {
+                        // 威力彩
+                        break;
+                    }
+                }
+                console.log(`${lottName}第二區：${sno}`);
+            }
+        }
+
+        // 呼叫函式，且傳參數
+        var gameNo = window.prompt('請輸入遊戲代號:1. 大樂透 2. 威力彩 3. 今彩');
+        if (gameNo === '1') {
+            // 產生大樂透號碼
+            getLottNum('大樂透', 6, 49, 'Y', 49);
+        } else if (gameNo === '2') {
+            // 產生威力彩號碼
+            getLottNum('威力彩', 6, 38, 'Y', 8);
+        } else if (gameNo === '3') {
+            // 產生今彩號碼
+            getLottNum('今彩', 5, 39, 'N');
+        } else {
+            console.log('代號err');
+        }
+
+
+    </script>
+</body>
+
+</html>
