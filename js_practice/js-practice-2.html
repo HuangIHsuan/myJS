@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 輸入任意數，判斷奇偶數的正負數 13 => 正奇數 -30 => 負偶數
+        while (true) {
+            var num = prompt('請輸入任意數');
+
+            if (num < 0 && num % 2 == 0) {
+                document.write(`${num} => 負偶數`);
+                break;
+            } else if (num > 0  && num % 2 == 0) {
+                document.write(`${num} => 正偶數`);
+                break;
+            } else if (num < 0  && num % 2 != 0) {
+                document.write(`${num} => 負奇數`);
+                break;
+            } else if (num > 0  && num % 2 == 1) {
+                document.write(`${num} => 正奇數`);
+                break;
+            } else if (num == 0) {
+                document.write(`${num} => 偶數`);
+                break;
+            } else {
+                alert('err!請輸入數字')
+                continue;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 入分數，依不同的分數給予不同的等級 80-100:等級 A 0-79:等級 B 60-69:等級 C 0-59:等級 D 其他:err!分數範圍 0-100
+
+        while (true) {
+            var score = prompt('請輸入分數');
+            if (score < 60) {
+                document.write(`${score} => 等級D`);
+                break;
+            } else if (score < 70 && score >= 60) {
+                document.write(`${score} => 等級C`);
+                break;
+            } else if (score < 80 && score >= 70) {
+                document.write(`${score} => 等級B`);
+                break;
+            } else if (score <= 100 && score >= 80) {
+                document.write(`${score} => 等級A`);
+                break;
+            } else {
+                alert('err!請輸入分數範圍 0-100');
+                continue;
+            }
+        }
+    </script>
+</body>
+
+</html>

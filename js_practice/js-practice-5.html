@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 使用陣列配合迴圈，亂數產生5個值不重覆 舉例:
+        // 排序前:57, 20, 49, 77, 32
+        // 排序後:20, 32, 49, 57, 77
+        // 最大值:77
+        // 最小值:20
+        var max = 100;
+        var min = 1;
+        var arr1 = [];
+
+        // 產生五個亂數的陣列
+        for (var i = 0; i < 5; i++) {
+            var num = Math.floor(Math.random() * max) + 1;
+            if (arr1.includes(num)){
+                i--;
+                continue;
+            }else {
+                arr1[i] = num;
+            }
+        }
+        console.log(`排序前：${arr1}`);
+
+        // 遞增排序後
+        var arr2 = arr1.sort((a, b) => {
+            return a - b;
+        });
+        console.log(`排序後：${arr2}`);
+
+        // 查看最大值/最小值
+        console.log(`最大值：${arr2[arr2.length-1]}`);
+        console.log(`最大值：${arr2[0]}`);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 輸入㇐個整數n，找出1-100之間可以被n整除的整數，每列只能顯示5個數，並統計有幾個數?
+        // 舉例: 請輸入任㇐整數:7
+        // 7, 14, 21, 28, 35,
+        // 42, 49, 56, 63, 70,
+        // 77, 84, 91, 98,
+        // 1-100 有 14 個整數可以被 7 整除
+
+        var n = 7;
+        var num = 0; //能被n整除的num個數
+
+
+        for (var i = 1; i <= 100; i++) {
+            if (i % n == 0) {
+                document.write(`${i}, `);
+                num++;
+                // 在num可以被5整除的時候換行，但最後的i值如果是100的話就不要加空格
+                if (num % 5 == 0 && i !== 100) {
+                    document.write('<br>');
+                }
+            }
+        }
+
+        document.write(`<br>1-100 有${num}個整數可以被${n}整除`)
+
+
+
+    </script>
+</body>
+
+</html>
