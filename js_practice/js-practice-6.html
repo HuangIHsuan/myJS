@@ -14,7 +14,7 @@
 
         // 產生1000組大樂透號碼
         var lott1000 = [];
-        for (var a = 0; a < 10; a++) {
+        for (var a = 0; a < 1000; a++) {
             //亂數產生大樂透號碼(一般區+特別號一起做)
             var lott = [];
             for (var i = 0; i < 7; i++) {
@@ -34,24 +34,20 @@
             }
 
         }
-        // console.log(lott1000);
+        console.log(lott1000);
 
         // 統計出1～49個別號碼的次數
-
-        lott1000.forEach((n) => {
-            console.log(n);
-        });
-
-        if (lott.includes) {
-            lott.map((b, index) => {
-                if (b === 30) {
-                    console.log(index);
-                }
+        for (var y = 1; y <= 49; y++) {
+            var count = 0; // 1-49號碼個數
+            lott1000.forEach((element) => {
+                element.forEach((n) => {
+                    if (n == y) {
+                        count++;
+                    }
+                });
             });
+            console.log(`${y}出現的次數：${count}次`);
         }
-
-
-
 
     </script>
 </body>
