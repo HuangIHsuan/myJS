@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>取得元素屬性值</h1>
+    <hr>
+    <!-- <a id="engine" href = 'https://www.google.com.tw/'>Google</a> -->
+    <a id="engine">Google</a>
+    <button id="btnEngine">更換搜尋引擎</button>
+
+    <script>
+        // 取得超連結元素
+        let engine = document.getElementById('engine');
+
+        // 檢查是否有超連結屬性
+        if (engine.hasAttribute('href')) {
+            console.log('yes');
+            // 取出超連結
+            // console.log(engine.href);
+            // console.log(engine.getAttribute('href'));
+
+            // 移除超連結屬性
+            engine.removeAttribute('href');
+
+            // 清空屬性值
+            // engine.href = '';
+
+        } else {
+            console.log('no');
+            // engine.href = 'https://www.google.com.tw/'
+            engine.setAttribute('href', 'https://www.google.com.tw/');
+            console.log(engine.href);
+        }
+        
+
+        // console.log(engine);
+        // 取得超連結屬性
+        // console.log(engine.href);
+
+        // 箭頭函式呼叫
+        document.querySelector('#btnEngine').addEventListener('click', () => {
+            // 更換超連結屬性值
+            engine.href = 'https://www.bing.com/';
+            engine.textContent = '微軟';
+            // console.log(engine.href);
+            // console.log(engine.textContent);
+        })
+
+        // 呼叫函式名稱
+        function getEngine() {
+            // 更換超連結屬性值
+            engine.href = 'https://www.bing.com/';
+            // console.log(engine.href);
+        }
+        document.querySelector('#btnEngine').addEventListener('click', getEngine);
+    </script>
+</body>
+
+</html>
