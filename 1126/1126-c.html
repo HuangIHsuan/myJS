@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .errColor {
+            color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="score">分數：</label>
+        <input type="text" id="score" maxlength="3">
+        <span id="msg"></span>
+        <p><input type="button" value="成績確認" id="btn1"></p>
+    </form>
+
+    <script>
+        let msg = document.getElementById('msg');
+        let score = document.getElementById('score');
+        let btn1 = document.getElementById('btn1');
+        btn1.addEventListener('click', () => {
+            // console.log(typeof(score.value));
+
+            // 行內樣式優先於上面設置的style
+            msg.removeAttribute('style');
+            if (score.value === '') {
+                msg.textContent = '請輸入分數';
+                msg.className = "errColor";
+            } else if (score.value >= 60 && score.value < 101) {
+                msg.textContent = '及格';
+                msg.style.color = 'green';
+            } else if (score.value < 60 && score.value >= 0) {
+                msg.textContent = '不及格';
+                msg.style.color = 'red';
+            } else {
+                msg.textContent = '輸入錯誤';
+                msg.className = "errColor";
+            }
+        })
+    </script>
+</body>
+
+</html>
